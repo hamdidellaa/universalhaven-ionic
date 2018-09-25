@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+    <ion-buttons end >
+        <button ion-button icon-only (click)="goBack()">
+          <ion-icon name="arrow-back" ></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-nav id="mynav" #mynav [root]="rootPage"></ion-nav>
+<ion-content padding>
+
+  
+  <!-- <img class="logo" src="assets/imgs/logo.png" /> -->
+  <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="center" novalidate>
+    <ion-list>
+      <ion-item text-center>
+          <img src="assets/imgs/logo2.png" width="50%" >
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>
+          Login
+        </ion-label>
+        <ion-input type="text" formControlName="login"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="invalidCredentials">
+        <ion-label color="danger">Invalid credentials</ion-label>
+      </ion-item>
+      <ion-item text-center>
+
+        <button style="width:50%" ion-button primary type="submit">Log me in ! </button>
+
+      </ion-item>
+      <ion-item text-center>
+            <a>Forgot your password ?</a>
+      </ion-item>
+
+    </ion-list>
+  </form>
+</ion-content>

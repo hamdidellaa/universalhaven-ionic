@@ -1,0 +1,89 @@
+<!--
+  Generated template for the DonatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+     
+    <ion-title>Donate</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  padding class="donatePage">
+    <img class="cover" src="assets/imgs/bg.jpg" />
+    <a (click)="goBack()" *ngIf="checkingOut">
+        <ion-icon name="arrow-back" style="margin-right:5px" ></ion-icon> Back to personal informations
+    </a>
+  <form [formGroup]="donationForm" (ngSubmit)="handleSubmit()">
+
+    <div  *ngIf="!checkingOut" style="background-color:transparent">
+        <ion-item>
+          <h2 style="font-weight: bold" text-center>Personal info</h2>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>First name </ion-label>
+            <ion-input formControlName="firstName" placeholder="First Name"></ion-input>      
+        </ion-item>
+        
+        <ion-item>
+            <ion-label stacked>Last name</ion-label>
+            <ion-input formControlName="lastName" placeholder="Last name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input formControlName="email"  placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Address</ion-label>
+            <ion-input formControlName="address" placeholder="Address"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Country</ion-label>
+            <ion-select formControlName="country" placeholder="Country">
+              <ion-option *ngFor="let country of countries" value="{{country.code}}">{{country.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <button ion-button primary block style="margin-top:1em" (click)="checkout()" > <ion-icon name="card" style="margin-right:10px"></ion-icon>  Checkout</button>
+    </div>
+    <div *ngIf="checkingOut">
+        <ion-item>
+            <h2 style="font-weight: bold" text-center>Payment infos</h2>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Credit card number</ion-label>
+            <ion-input formControlName="creditCardNumber" placeholder="Credit card"></ion-input>
+        </ion-item>
+        <ion-item inline>
+            <ion-label stacked>Expire Month</ion-label>
+            <ion-input formControlName="expMonth" placeholder="Expire Month"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Expire Year</ion-label>
+            <ion-input formControlName="expYear" placeholder="Expire year"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>CVC</ion-label>
+            <ion-input formControlName="cvc" placeholder="CVC"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Amount</ion-label>
+            <ion-input formControlName="amount" placeholder="Amount"></ion-input>
+        </ion-item>
+        <ion-item text-center>
+            <button type="submit" ion-button primary block>Donate </button>
+        </ion-item>
+        <ion-item text-right>
+            <small>Powered by</small> <br><img  src="assets/imgs/stripe.png" style="width:40%;height:auto;margin-left:3em">
+        </ion-item>
+      </div>
+  </form>
+ 
+
+ 
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-card (tap)="taskDetails(task)">
+    <ion-card-header text-right>
+      <ion-badge color="{{task.priority|priority}}" text-right>{{task.priority}}</ion-badge>
+    </ion-card-header>
+    
+    <ion-card-content>
+
+      <p>{{task.description}}</p>
+
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="person"></ion-icon>
+          <div>{{task.taskExecutor}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>0 Comments</div>
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card>

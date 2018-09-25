@@ -1,0 +1,25 @@
+
+
+<ion-list radio-group class="popover-page">
+
+    <ion-row wrap	>
+      <ion-col *ngFor="let image of images" col-6 >
+          
+        
+          <img src="{{image.path}}" (click)="check(image)">
+          <form>
+          <ion-checkbox name="{{image.path}}" [(ngModel)]="image.selected" style="position:absolute;top:0;right:0" (click)="check(image)" >
+
+          </ion-checkbox>
+          </form>
+      </ion-col>
+    
+    </ion-row>
+    <ion-item text-center>
+      <button ion-button (click)="upload()"><ion-icon name="camera" style="margin-right:5px"></ion-icon>Upload</button>
+    </ion-item>
+  </ion-list>
+  
+  <button ion-button block primary (click)="change()" style="padding-left:1em;padding-right:1em">Change</button>
+
+  

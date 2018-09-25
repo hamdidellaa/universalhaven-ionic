@@ -1,0 +1,39 @@
+<ion-menu [content]="content" type="overlay">
+    
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Pages</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    
+      <ion-content>
+        <ion-list>
+          <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+            {{p.title}}
+          </button>
+        </ion-list>
+      </ion-content>
+  
+</ion-menu>
+<ion-nav #content></ion-nav>
+
+
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="toggleMenu()">
+              <ion-icon name="menu" ></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Home page</ion-title>
+    </ion-navbar>
+  
+
+</ion-header>
+
+
+<ion-content padding>
+    
+</ion-content>

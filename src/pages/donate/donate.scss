@@ -1,0 +1,30 @@
+page-donate {
+
+}
+/*
+.donatePage{
+    
+    background-image: url('/assets/imgs/donatebg.jpg');
+    // background: url('../../img/getstart.png');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    
+}
+
+*/
+ion-app.md,ion-item {
+    background-color:transparent !important;
+}    
+
+.donatePage * {
+    color:black !important;
+}
+
+
+.cover{
+    height:100%;
+    width: 100%;
+    position: absolute;
+    opacity : 0.5;
+}
